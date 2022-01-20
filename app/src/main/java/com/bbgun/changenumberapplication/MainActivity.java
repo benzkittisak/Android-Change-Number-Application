@@ -34,7 +34,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String decToBin(int dec){
-        String binary = Integer.toBinaryString(dec);
-        return ("Binary Number : " + binary);
+//        String binary = Integer.toBinaryString(dec);
+
+        int binary[] = new int[99];
+        int index = 0 ;
+
+        while(dec > 0){
+            binary[index++] = dec % 2;
+            dec = dec /2;
+        }
+
+        String result = "";
+        for (int i = index -1 ; i >= 0; i--) {
+            result += binary[i];
+        }
+
+
+        return ("Binary Number : " + result);
     }
 }
